@@ -1,3 +1,4 @@
+# This is the workflow for spinning up and destroying Azure resources
 name: Configure Azure environment
 
 on:
@@ -8,7 +9,7 @@ env:
   AZURE_RESOURCE_GROUP: cd-with-actions
   AZURE_APP_PLAN: actions-hello-world-deployment
   AZURE_LOCATION: '"North Europe"'
-  AZURE_WEBAPP_NAME: CitedCub-hello-world_app
+  AZURE_WEBAPP_NAME: CitedCub-hello-world-app
 
 jobs:
   setup-azure-resources:
@@ -33,7 +34,7 @@ jobs:
       - name: Create Azure app service plan
         if: success()
         run: |
-          az appservice plan create --resource-group ${{env.AZURE_RESOURCE_GROUP}} --name ${{env.AZURE_APP_PLAN}} --is-linux --sku F1 ${{secrets.AZURE_SUBSCRIPTION_ID}}
+          az appservice plan create --resource-group ${{env.AZURE_RESOURCE_GROUP}} --name ${{env.AZURE_APP_PLAN}} --is-linux --sku F1 --subscription ${{secrets.AZURE_SUBSCRIPTION_ID}}
 
       - name: Create webapp resource
         if: success()
@@ -52,7 +53,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Azure login
         uses: azure/login@v1
