@@ -3,6 +3,11 @@ name: Stage the app
 on:
   pull_request:
     types: [labeled]
+
+env:
+  DOCKER_IMAGE_NAME: CitedCub-azure-hello-world
+  IMAGE_REGISTRY_URL: docker.pkg.github.com
+  AZURE_WEBAPP_NAME: CitedCub-hello-world-app
     
 jobs:
   build:
