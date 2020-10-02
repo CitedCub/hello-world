@@ -1,3 +1,4 @@
+# This is the workflow for spinning up and destroying Azure resources
 name: Configure Azure environment
 
 on:
