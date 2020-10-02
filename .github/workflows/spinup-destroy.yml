@@ -9,7 +9,7 @@ env:
   AZURE_RESOURCE_GROUP: cd-with-actions
   AZURE_APP_PLAN: actions-hello-world-deployment
   AZURE_LOCATION: '"North Europe"'
-  AZURE_WEBAPP_NAME: CitedCub-hello-world_app
+  AZURE_WEBAPP_NAME: CitedCub-hello-world-app
 
 jobs:
   setup-azure-resources:
