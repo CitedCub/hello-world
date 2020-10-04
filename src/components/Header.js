@@ -4,7 +4,7 @@ import "../App.css";
 function Header() {
   return (
     <div className="Header">
-      <div>Welcome!</div>
+      <div>Welcome</div>
       <img src="images/wired-brain-coffee-logo.png" alt="Wired Brain" />
     </div>
   );
