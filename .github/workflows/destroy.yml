@@ -1,3 +1,11 @@
+name: Destroy Azure environment
+
+on:
+  workflow_dispatch:
+
+env:
+  AZURE_RESOURCE_GROUP: cd-with-actions
+
 jobs:
   destroy-azure-resources:
     runs-on: ubuntu-latest
