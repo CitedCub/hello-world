@@ -8,33 +8,33 @@ env:
   IMAGE_REGISTRY_URL: docker.pkg.github.com
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  # build:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: npm install and build webpack
-        run: |
-          npm install
-          npm run build
-      - uses: actions/upload-artifact@master
-        with:
-          name: webpack artifacts
-          path: public/
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: npm install and build webpack
+  #       run: |
+  #         npm install
+  #         npm run build
+  #     - uses: actions/upload-artifact@master
+  #       with:
+  #         name: webpack artifacts
+  #         path: public/
 
   Build-Docker-image:
     runs-on: ubuntu-latest
-    needs: build
+    # needs: build
     name: Build image and store in GitHub Packages
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      # - name: Checkout
+      #   uses: actions/checkout@v1
 
-      - name: Download built artifact
-        uses: actions/download-artifact@master
-        with:
-          name: webpack artifacts
-          path: public
+      # - name: Download built artifact
+      #   uses: actions/download-artifact@master
+      #   with:
+      #     name: webpack artifacts
+      #     path: public
 
       - name: Create image and store in Packages
         uses: mattdavis0351/actions/docker-gpr@1.3.0
