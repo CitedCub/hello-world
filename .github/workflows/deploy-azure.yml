@@ -20,8 +20,10 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: ${{env.IMAGE_REGISTRY_URL}}
-          username: ${{github.actor}}
-          password: ${{secrets.GITHUB_TOKEN}}
+#          username: ${{github.actor}}
+          username: citedcub
+#          password: ${{secrets.GITHUB_TOKEN}}
+          password: ef571afc83675c08ac577bf7fd1d9459f94d55e9
       - name: Deploy web app container
         uses: azure/webapps-deploy@v2
         with:
